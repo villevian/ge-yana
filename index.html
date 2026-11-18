@@ -11,7 +11,7 @@ main{max-width:820px;margin:0 auto;padding:18px 16px 50px}.card{display:flex;gap
 <div id="list"></div></main><footer>Valentyna Hordiienko · Middle Learning Architect</footer>
 <script>
 const SB_URL="https://zuegojpfhgigsvyrnymt.supabase.co",SB_KEY="sb_publishable__Xn8xRhne9Hp2ckaXu6xCQ_MOe52bng",CODE="03dc5b58ca01105ea2cfef8dcb5c82ec";
-const LESSONS=[{key:"GE B2+ Pet peeves: things that drive us up the wall",href:"lessons/pet-peeves.html",icon:"😤",title:"Pet peeves: things that drive us up the wall",sub:"annoying situations · videos and reels · it drives me up the wall · always + -ing, I wish … would · how to say it politely"}];
+const LESSONS=[{key:"GE B2+ Pet peeves: things that drive us up the wall",href:"lessons/pet-peeves.html",icon:"😤",title:"Pet peeves: things that drive us up the wall",sub:"annoying situations · videos and reels · it drives me up the wall · always + -ing, I wish … would · how to say it politely"},{key:"GE B2+ Pet peeves: extra homework (collocations)",href:"lessons/pet-peeves-extra.html",icon:"📝",title:"Extra homework: collocations from the video",sub:"cut in line · flake out on someone · roll your eyes at … · keep to the right · prepositions · your own pet peeves"}];
 const PR={};
 function render(){document.getElementById("list").innerHTML=LESSONS.map(l=>{const p=PR[l.key];const s=p===undefined?'<span class="st">Not started</span>':p?'<span class="st d">✓ Sent</span>':'<span class="st p">In progress</span>';
  return `<a class="card ${l.href?"":"soon"}" href="${l.href||"#"}"><span class="ic">${l.icon}</span><div><h3>${l.title}</h3><p>${l.sub}</p></div>${s}</a>`}).join("")}
