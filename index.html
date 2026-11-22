@@ -16,4 +16,4 @@ const PR={};
 function render(){document.getElementById("list").innerHTML=LESSONS.map(l=>{const p=PR[l.key];const s=p===undefined?'<span class="st">Not started</span>':p?'<span class="st d">✓ Sent</span>':'<span class="st p">In progress</span>';
  return `<a class="card ${l.href?"":"soon"}" href="${l.href||"#"}"><span class="ic">${l.icon}</span><div><h3>${l.title}</h3><p>${l.sub}</p></div>${s}</a>`}).join("")}
 render();fetch(SB_URL+"/rest/v1/rpc/get_my_progress",{method:"POST",headers:{apikey:SB_KEY,"Content-Type":"application/json"},body:JSON.stringify({p_code:CODE})}).then(r=>r.json()).then(rows=>{(rows||[]).forEach(r=>PR[r.lesson]=!!r.submitted);render()}).catch(()=>{});
-</script></body></html>
+</script><script src="https://villevian.github.io/bp-admin/cabinet.js" data-code="03dc5b58ca01105ea2cfef8dcb5c82ec" defer></script></body></html>
