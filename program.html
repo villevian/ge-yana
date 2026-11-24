@@ -43,7 +43,7 @@ footer{max-width:900px;margin:0 auto;padding:0 16px 30px;font-size:12px;color:#7
 const U=[
 {n:1,p:6,title:"Activities, kindness and annoyances",L:[
  {c:"1A",t:"Give it a go",p:6,g:"cleft sentences",v:"free-time activities",pr:"sentence stress in cleft sentences",s:"persuade people to try different activities",
-  a:"New ways to spend free time: run clubs, padel, pottery, 'hobby hopping'",T:"Article: why run clubs became the new place to make friends",V:"Short documentary about a city run club or a 'try a new hobby every week' challenge",X:"Persuade a friend to try your hobby — a voice message with 3 cleft sentences (What I love about it is…)"},
+  a:"New ways to spend free time: run clubs, padel, pottery, 'hobby hopping'",links:[["Lesson","lessons/1a-lesson.html"],["Homework","lessons/1a-hw.html"],["Extra","lessons/1a-extra.html"]],T:"Article: why run clubs became the new place to make friends",V:"Short documentary about a city run club or a 'try a new hobby every week' challenge",X:"Persuade a friend to try your hobby — a voice message with 3 cleft sentences (What I love about it is…)"},
  {c:"1B",t:"Kind acts",p:8,g:"narrative tenses",v:"helping people",pr:"weak forms: had",s:"narrate a short story in detail",
   a:"Kindness that went viral: strangers, neighbours, online communities",T:"News story: a small act of kindness that went viral",V:"News clip / reel telling a real kindness story",X:"Retell a story you saw online using all four narrative tenses"},
  {c:"1C",t:"How annoying!",p:10,g:"exaggeration",v:"at work",pr:"stress on honestly and seriously",s:"talk about annoying incidents",done:1,
@@ -145,7 +145,7 @@ document.getElementById("units").innerHTML=U.map(u=>{
  const ls=u.L.map(l=>{
   const items=[l.T&&`<li><span class="tag t">TEXT</span>${esc(l.T)}</li>`,l.V&&`<li><span class="tag v">VIDEO</span>${esc(l.V)}</li>`,l.X&&`<li><span class="tag x">EXTRA</span>${esc(l.X)}</li>`].filter(Boolean).join("");
   const links=l.links?`<div class="links">${l.links.map(([n,h])=>`<a href="${h}">${n} →</a>`).join("")}</div>`:"";
-  return `<div class="lesson"><div class="lh"><span class="code">${l.c}</span><span class="lt">${esc(l.t)}</span><span class="pg">page ${l.p}</span>${l.done?'<span class="st d">✓ Done</span>':'<span class="st">Coming up</span>'}</div>
+  return `<div class="lesson"><div class="lh"><span class="code">${l.c}</span><span class="lt">${esc(l.t)}</span><span class="pg">page ${l.p}</span>${l.done?'<span class="st d">✓ Done</span>':l.links?'<span class="st" style="background:#fdeef3;color:#9e2d55">Open</span>':'<span class="st">Coming up</span>'}</div>
   <div class="book"><div><b>Grammar / language</b>${esc(l.g)}</div><div><b>Vocabulary</b>${esc(l.v)}</div><div><b>Pronunciation</b>${esc(l.pr)}</div><div><b>Speaking goal</b>${esc(l.s)}</div></div>
   <div class="upd"><div class="ang">✨ ${esc(l.a)}</div>${items?`<ul>${items}</ul>`:""}${links}</div></div>`}).join("");
  const sk=`<div class="skills"><h4>Develop your skills</h4>${u.S.map(s=>`<div class="sk"><b>${s[0]}</b><span>${s[1]} — ${s[2]}</span></div>`).join("")}</div>`;
